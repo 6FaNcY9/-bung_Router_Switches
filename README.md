@@ -1,13 +1,27 @@
 ## Inhaltsverzeichnis
 
+- [Inhaltsverzeichnis](#inhaltsverzeichnis)
 - [Aufgabe](#aufgabe)
-- [Aufbau](#netzwerk-topologie)
-- [Router](#Router)
+- [Netzwerk Topologie](#netzwerk-topologie)
+- [Router](#router)
+  - [Connect Serial Port Putty](#connect-serial-port-putty)
   - [Router Config](#router-config)
+    - [Router Spesifikationen](#router-spesifikationen)
+    - [F0/0 Config (Sw1)](#f00-config-sw1)
+    - [F0/1 Config (Sw2)](#f01-config-sw2)
+  - [DHCP Config](#dhcp-config)
+    - [DHCP Config (SW1)](#dhcp-config-sw1)
+    - [DHCP Config (SW2)](#dhcp-config-sw2)
 - [Switch](#switch)
+  - [Switch Config (Sw1)](#switch-config-sw1)
+  - [Switch Config(Sw2)](#switch-configsw2)
 - [Wlan](#wlan)
-- [Wireshark](#license)
-- [All Commands](#commands)
+- [Wireshark](#wireshark)
+  - [Wireshark Usage](#wireshark-usage)
+- [All Commands](#all-commands)
+- [All Config Modes](#all-config-modes)
+  - [Command List for Copy \& Paste](#command-list-for-copy--paste)
+- [Beteiligte Personen](#beteiligte-personen)
 
 ## Aufgabe
 
@@ -24,8 +38,9 @@ Der Router war ein Casio *NummerEinfügen* und hatte 2 Ports **f0/0** und **f0/1
 
 ### Connect Serial Port Putty
 1. Download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-2. Select Serial Line to connect to your router
-3. Click Open
+2. Connect your router with your PC via serial cable
+3. Select Serial Line to connect to your router
+4. Click Open
 
 ### Router Config
 **Wichtig alle befehle wurden in Putty Terminal einegege!!!**
@@ -119,6 +134,15 @@ Nun konnten wir unsere Laptops mit dem Wlan oder Sw1 oder Sw2 verbinden und mit 
 | `show ip dhcp binding` | Show the DHCP bindings |
 | `show running-config` | Show the running configuration |
 
+
+## All Config Modes
+| Name| Mode | Description |
+| --- | --- | --- |
+| # | `enable` | Enter privileged mode |
+| config | `configure terminal` | Enter global configuration mode |
+| ip-config | `interface` | Enter interface configuration mode |
+| dhcp-config | `ip dhcp pool **name**` | Create a new DHCP pool |
+
 ### Command List for Copy & Paste
 ```bash
 enable
@@ -141,14 +165,6 @@ exit
 show ip dhcp binding
 show running-config
 ```
-
-## All Config Modes
-| Name| Mode | Description |
-| --- | --- | --- |
-| # | `enable` | Enter privileged mode |
-| config | `configure terminal` | Enter global configuration mode |
-| ip-config | `interface` | Enter interface configuration mode |
-| dhcp-config | `ip dhcp pool **name**` | Create a new DHCP pool |
 
 ## Beteiligte Personen
 - [MaximilinaWein](mailto:mwein@student.tgm.ac.at)
